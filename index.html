@@ -117,7 +117,14 @@
   #экран-1 .первый-экран__картинка img { height: 100%; width: 100%; }
 }
 html { scroll-padding-top: 84px; }
-@media (max-width: 899px) { #экран-1 .герой-мобильный { width: 56% !important; } }
+/* первый экран, телефон: портрет растворяется в фоне овалом, чуть крупнее и «дышит» */
+@media (max-width: 899px) {
+  #экран-1 .герой-мобильный { width: 60% !important; overflow: visible !important; margin-top: 26px !important; position: relative; z-index: 0; }
+  #экран-1 .герой-мобильный img { -webkit-mask-image: radial-gradient(ellipse 60% 58% at 50% 48%, var(--цвет-текст) 56%, transparent 100%); mask-image: radial-gradient(ellipse 60% 58% at 50% 48%, var(--цвет-текст) 56%, transparent 100%);
+    transform-origin: 50% 80%; animation: портрет-дышит 9s var(--плавность) infinite alternate !important; }
+}
+@keyframes портрет-дышит { from { transform: scale(1.2) translateY(0); } to { transform: scale(1.25) translateY(-6px); } }
+@media (prefers-reduced-motion: reduce) { #экран-1 .герой-мобильный img { animation: none !important; transform: scale(1.2); } }
 /* чистые швы у тёмных экранов: без серой размытой полосы, ровная граница */
 .блок.тёмный .стык, .блок:has(+ .блок.тёмный) .стык--низ, .блок.тёмный + .блок .стык--верх { display: none; }
 /* фиксированная шапка: логотип и телефон всегда под рукой, стрелка «наверх» появляется после первого экрана */
@@ -206,7 +213,7 @@ html { scroll-padding-top: 84px; }
 .первый-экран--разворот .кикер{background:none!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;padding:0!important;position:static!important;transform:none!important;color:#6E1A2E!important;font-family:"Cormorant Garamond",Georgia,serif!important;font-style:italic!important;font-weight:600!important;font-size:20px!important;letter-spacing:0!important;text-transform:none!important;line-height:1.25!important;margin:0 0 10px!important;display:block!important}
 .первый-экран--разворот .кикер .иконка{display:none!important}
 .цена-строка{margin:4px 0 14px;font-family:"Open Sans",system-ui,sans-serif;font-weight:600;font-size:16px;color:#1F1410}
-@media(max-width:899px){.герой-мобильный{width:90%!important;height:auto!important;min-height:0!important;aspect-ratio:900/1010!important;margin:0 auto!important;background:none!important}.герой-мобильный::before,.герой-мобильный::after{display:none!important}.герой-мобильный img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:0!important;box-shadow:none!important;filter:none!important;animation:none!important;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 88%,transparent 100%),linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent 0,#000 7%,#000 88%,transparent 100%),linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%);mask-composite:intersect}.первый-экран--разворот .кикер{margin-bottom:6px!important}.цена-строка{margin-top:0}}
+@media(max-width:899px){.герой-мобильный{width:90%!important;height:auto!important;min-height:0!important;aspect-ratio:900/1010!important;margin:0 auto!important;background:none!important}.герой-мобильный::before,.герой-мобильный::after{display:none!important}.герой-мобильный img{width:100%!important;height:100%!important;object-fit:cover!important;border-radius:0!important;box-shadow:none!important;filter:none!important;animation:none!important;}.первый-экран--разворот .кикер{margin-bottom:6px!important}.цена-строка{margin-top:0}}
 @media(min-width:900px){.первый-экран--разворот .кикер{font-size:24px!important}.цена-строка{font-size:18px}}
 </style>
 <section class="блок блок--первый-экран первый-экран--разворот светлый" id="экран-1" data-тип="первый-экран" data-схема="разворот" data-ключ-макета="светлая" data-картинка="фото"><div class="стык стык--низ" aria-hidden="true" style="--стык-сосед: var(--цвет-фон-2, var(--цвет-фон))"></div>
