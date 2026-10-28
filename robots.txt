@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: /
+Allow: /
+Sitemap: https://marinayamb1973-sketch.github.io/anna-rein/sitemap.xml
