@@ -116,6 +116,8 @@
   #экран-1 .первый-экран__картинка { min-height: min(66svh, 720px); }
   #экран-1 .первый-экран__картинка img { height: 100%; width: 100%; }
 }
+@media (max-width: 899px) { .шапка-фикс { transition: transform .28s var(--плавность), background-color .25s var(--плавность), border-color .25s var(--плавность); } .шапка-фикс.спрятана { transform: translateY(-110%); } }
+@media (prefers-reduced-motion: reduce) { .шапка-фикс { transition: none; } }
 html { scroll-padding-top: 84px; }
 /* первый экран, телефон: портрет растворяется в фоне овалом, чуть крупнее и «дышит» */
 @media (max-width: 899px) {
@@ -254,7 +256,19 @@ document.addEventListener("DOMContentLoaded", function () {
 (function () {
   var в = document.querySelector(".наверх"); if (!в) { return; }
   var ш = document.querySelector(".шапка-фикс");
-  function п() { var у = window.scrollY || 0; в.classList.toggle("виден", у > 700); if (ш) { ш.classList.toggle("с-фоном", у > 24); } }
+  var пред = window.scrollY || 0;
+  function п() {
+    var у = window.scrollY || 0; в.classList.toggle("виден", у > 700);
+    if (ш) {
+      ш.classList.toggle("с-фоном", у > 24);
+      // телефон: вниз — шапка уезжает, вверх — возвращается; у самого верха всегда на месте
+      if (window.matchMedia("(max-width: 899px)").matches) {
+        if (у < 80 || у < пред - 6) { ш.classList.remove("спрятана"); }
+        else if (у > пред + 6) { ш.classList.add("спрятана"); }
+      } else { ш.classList.remove("спрятана"); }
+    }
+    пред = у;
+  }
   addEventListener("scroll", п, { passive: true }); п();
   document.addEventListener("click", function (е) {
     var а = е.target.closest && е.target.closest('a[href="#экран-1"]');
