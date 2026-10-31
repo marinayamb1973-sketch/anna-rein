@@ -2073,7 +2073,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 @media (max-width: 899px) {
   #экран-08 .раскладка { grid-template-columns: 1fr; grid-template-areas: "шапка" "портрет" "тело"; grid-template-rows: auto; }
   #экран-08 .портрет { width: 100%; margin-inline: auto; }
-  #экран-08 .портрет img { width: min(72%, 300px); height: auto; aspect-ratio: 560 / 900; object-fit: cover; object-position: top; -webkit-mask-image: linear-gradient(to bottom, var(--цвет-текст) 82%, transparent 100%); mask-image: linear-gradient(to bottom, var(--цвет-текст) 82%, transparent 100%); filter: none; }
+  #экран-08 .портрет img { width: min(72%, 300px); height: auto; aspect-ratio: 640 / 1000; object-fit: cover; object-position: top; -webkit-mask-image: linear-gradient(to bottom, var(--цвет-текст) 82%, transparent 100%); mask-image: linear-gradient(to bottom, var(--цвет-текст) 82%, transparent 100%); filter: none; }
         #экран-08 .штамп { grid-template-columns: 1fr; border-radius: var(--радиус-карточки); padding: 10px 16px; }
   #экран-08 .кнопка-место { align-items: stretch; }
 }
