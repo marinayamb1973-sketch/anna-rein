@@ -221,18 +221,19 @@ html { scroll-padding-top: 84px; }
   -webkit-mask-composite: source-in;
   mask-image: linear-gradient(to bottom, transparent 0, var(--цвет-текст) 14%, var(--цвет-текст) 88%, transparent 100%), linear-gradient(to right, transparent 0, var(--цвет-текст) 12%, var(--цвет-текст) 88%, transparent 100%);
   mask-composite: intersect;
-  transform-origin: 50% 40%; animation: фото-дышит 14s var(--плавность) infinite alternate; }
+  mix-blend-mode: multiply; transform-origin: 50% 40%; animation: фото-дышит 14s var(--плавность) infinite alternate; }
 @keyframes фото-дышит { from { transform: scale(1); } to { transform: scale(1.03); } }
 @media (prefers-reduced-motion: reduce) { #экран-1 img.фото-анна { animation: none !important; } }
 @media (min-width: 900px) {
   #экран-1 .первый-экран__картинка { min-height: 0 !important; background: none !important; overflow: visible !important; aspect-ratio: auto !important; display: flex; justify-content: flex-end; align-items: center; }
   #экран-1 .первый-экран__картинка::before, #экран-1 .первый-экран__картинка::after { display: none !important; }
-  #экран-1 .первый-экран__картинка img.фото-анна { height: min(80svh, 860px) !important; width: auto !important; aspect-ratio: 1000 / 1250; animation: фото-дышит 14s var(--плавность) infinite alternate !important; filter: none !important; }
+  #экран-1 .первый-экран__картинка img.фото-анна { height: min(80svh, 860px) !important; width: auto !important; aspect-ratio: 1000 / 1250; animation: фото-дышит 14s var(--плавность) infinite alternate !important; filter: brightness(1.05) saturate(1.04) !important; mix-blend-mode: multiply !important; }
 }
 @media (max-width: 899px) {
-  #экран-1 .герой-мобильный { width: clamp(150px, calc((100svh - 490px) / 1.15), 92%) !important; height: auto !important; aspect-ratio: 1 / 1.15 !important; min-height: 0 !important; margin: 14px auto 0 !important; background: none !important; overflow: visible !important; position: relative; }
+  #экран-1 .герой-мобильный { width: clamp(150px, calc((100svh - 450px) / 1.15), 88%) !important; height: auto !important; aspect-ratio: 1 / 1.15 !important; min-height: 0 !important; margin: 14px auto 0 !important; background: none !important; overflow: visible !important; position: relative; }
   #экран-1 .герой-мобильный::before, #экран-1 .герой-мобильный::after { display: none !important; }
-  #экран-1 .герой-мобильный img.фото-анна { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 52% !important; animation: фото-дышит 14s var(--плавность) infinite alternate !important; filter: none !important; }
+  #экран-1 .герой-мобильный img.фото-анна { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: 50% 52% !important; animation: фото-дышит 14s var(--плавность) infinite alternate !important; filter: brightness(1.05) saturate(1.04) !important; mix-blend-mode: multiply !important; }
+  #экран-1 .цена-строка { text-align: center; }
 }
 </style>
 <section class="блок блок--первый-экран первый-экран--разворот светлый" id="экран-1" data-тип="первый-экран" data-схема="разворот" data-ключ-макета="светлая" data-картинка="фото"><div class="стык стык--низ" aria-hidden="true" style="--стык-сосед: var(--цвет-фон-2, var(--цвет-фон))"></div>
