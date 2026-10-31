@@ -2031,6 +2031,9 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 }
 @media (max-width: 899px) { #экран-07 .рейтинг, #экран-07 .все-отзывы { font-size: var(--кегль-текст); } }
 
+#экран-07 .кнопка--главная { --цвет-кнопки: var(--цвет-фон); --цвет-на-кнопке: var(--цвет-акцент); background: var(--цвет-фон); color: var(--цвет-акцент); }
+#экран-07 .кнопка--главная:hover { background: var(--цвет-фон-2); color: var(--цвет-акцент); }
+
 /* экран 08 */
 #экран-08 .раскладка { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
   grid-template-areas: "шапка портрет" "тело портрет"; grid-template-rows: auto 1fr;
@@ -2166,6 +2169,9 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-10 .действие { align-items: stretch; }
 }
 @media (max-width: 899px) { #экран-10 .звонок, #экран-10 .доставка { font-size: var(--кегль-текст); } }
+
+#экран-10 .кнопка--главная { --цвет-кнопки: var(--цвет-фон); --цвет-на-кнопке: var(--цвет-акцент); background: var(--цвет-фон); color: var(--цвет-акцент); }
+#экран-10 .кнопка--главная:hover { background: var(--цвет-фон-2); color: var(--цвет-акцент); }
 
 /* экран 11 */
 #экран-11 .подвал__сетка { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 4fr) minmax(0, 4fr); gap: clamp(28px, 4vw, 64px); align-items: start; }
