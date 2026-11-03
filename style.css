@@ -1942,7 +1942,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 #экран-06 .шапка-цены h2 { text-wrap: balance; }
 #экран-06 .шапка-цены .лид { margin-top: .75rem; }
 
-#экран-06 .шкала-масштаба { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 36px); align-items: stretch; }
+#экран-06 .шкала-масштаба { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 36px); align-items: stretch; }
 #экран-06 .ступень { margin: 0; display: flex; flex-direction: column; gap: clamp(12px, 1.4vw, 18px); }
 #экран-06 .ступень__кадр { margin: 0; width: 100%; aspect-ratio: 1; overflow: hidden; border-radius: var(--радиус); box-shadow: none; border: 0; }
 #экран-06 .ступень__кадр img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 0; }
@@ -1964,8 +1964,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 #экран-06.светлый .ступень__что { color: var(--цвет-текст-мягкий); }
 #экран-06.тёмный .ступень__что { color: var(--цвет-тёмный-текст); }
 #экран-06.тёмный .ступень__тело { border-color: var(--цвет-тёплый); }
-#экран-06.светлый .ступень--4 .ступень__кадр { color: var(--цвет-акцент); background: var(--цвет-фон-2); }
-#экран-06.тёмный .ступень--4 .ступень__кадр { color: var(--цвет-тёплый-мягкий); background: var(--цвет-тёмный-фон-2); }
+#экран-06.светлый .ступень--6 .ступень__кадр { color: var(--цвет-акцент); background: var(--цвет-фон-2); }
+#экран-06.тёмный .ступень--6 .ступень__кадр { color: var(--цвет-тёплый-мягкий); background: var(--цвет-тёмный-фон-2); }
 #экран-06.светлый .источник { color: var(--цвет-текст-тихий); }
 #экран-06.тёмный .источник { color: var(--цвет-тёплый-мягкий); }
 
