@@ -254,11 +254,13 @@ html { scroll-padding-top: 84px; }
     <figure class="картинка первый-экран__картинка"><img class="фото-анна" src="img/hero-anna-nastoyaschaya.webp" alt="Анна Рейн за столом с сырной пастой, подарочной коробкой и ТрюфЧизами" width="1000" height="945" fetchpriority="high"></figure>
   </div>
 </section>
+<style id="без-липкой-кнопки">.липкая-кнопка { display: none !important; }</style>
 <script id="липкая-связь">
-/* липкая полоса телефона: после первого экрана ведёт к Анне, а не повторяет «Выбрать сырный десерт» */
+/* решение владелицы 03.11.2026: внизу телефона кнопки нет, клиентам она казалась спамом — убираем полосу и её резерв места */
 document.addEventListener("DOMContentLoaded", function () {
-  var а = document.querySelector(".липкая-кнопка a");
-  if (а) { а.textContent = "Написать Анне"; а.setAttribute("href", "https://vk.me/annareins"); }
+  var п = document.querySelector(".липкая-кнопка");
+  if (п) п.remove();
+  document.body.classList.remove("с-липкой-кнопкой");
 });
 </script>
 <div class="шапка-фикс">
